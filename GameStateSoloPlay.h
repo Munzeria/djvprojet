@@ -11,14 +11,15 @@ class GameStateSoloPlay: public GameStateBase
 public:
     /*  Constructeur    */
     GameStateSoloPlay(Game* gameArg);
-    /*  methodes override; voir GameStateBase.h */
-    void execute() override;
-    /*  Initialise les elements du jeu  */
-    void initialize();
+    /*  methode override; voir GameStateBase.h */
+    void execute(sf::Time delta) override;
     /*  Methodes permettant de recuperer les elements a afficher    */
     sf::RectangleShape* getPlayerRacket();
     sf::RectangleShape* getIARacket();
     sf::CircleShape* getBall();
+private:
+    /*  Methode gerant le mouvement du joueur   */
+    void    playerMovement(sf::Time delta);
 /*  ----    VARIABLES   ----    */
 private:
     /*  Elements du jeu:

@@ -1,7 +1,7 @@
 #ifndef _GAMESTATEBASE_
 #define _GAMESTATEBASE_
 
-#include "GameObject.h"
+#include <SFML/System.hpp>
 
 //  Forward definition de Game
 class Game;
@@ -14,7 +14,7 @@ public:
     GameStateBase(Game* g);
     /*  execute() realise les operations liees a un etat du jeu precis.
     **  il est ici virtuel pur car GameStateBase est une classe abstraite non destinee a etre instanciee    */
-    virtual void execute() = 0;
+    virtual void execute(sf::Time delta) = 0;
     Game* getGame();
 /*  ----    VARIABLES   ----    */
 private:

@@ -3,14 +3,16 @@
 	<iostream>
 	"Game.h"
 
-1606411642 /home/munzeria/Documents/djvprojet/Space Pong/Game.h
+1606733691 /home/munzeria/Documents/djvprojet/Space Pong/Game.h
 	<SFML/Graphics.hpp>
+	"GameSettings.h"
 	"GameStateBase.h"
 	"GameStateSoloPlay.h"
+	"KeyboardControls.h"
 	"Renderer.h"
 	"RendererSoloPlay.h"
 
-1606412393 source:/home/munzeria/Documents/djvprojet/Space Pong/Game.cpp
+1606733929 source:/home/munzeria/Documents/djvprojet/Space Pong/Game.cpp
 	"Game.h"
 
 1539885013 /home/munzeria/Documents/SFML-2.5.1/include/SFML/Graphics.hpp
@@ -422,17 +424,18 @@
 	<SFML/Graphics/Drawable.hpp>
 	<SFML/Window/GlResource.hpp>
 
-1606412241 /home/munzeria/Documents/djvprojet/Space Pong/GameStateBase.h
-	"GameObject.h"
+1606733895 /home/munzeria/Documents/djvprojet/Space Pong/GameStateBase.h
+	<SFML/System.hpp>
 
 1606412342 source:/home/munzeria/Documents/djvprojet/Space Pong/GameStateBase.cpp
 	"GameStateBase.h"
 
-1606412372 source:/home/munzeria/Documents/djvprojet/Space Pong/GameStateSoloPlay.cpp
+1606735669 source:/home/munzeria/Documents/djvprojet/Space Pong/GameStateSoloPlay.cpp
 	"Game.h"
 	"GameStateSoloPlay.h"
+	<iostream>
 
-1606410428 /home/munzeria/Documents/djvprojet/Space Pong/GameStateSoloPlay.h
+1606731726 /home/munzeria/Documents/djvprojet/Space Pong/GameStateSoloPlay.h
 	"GameStateBase.h"
 
 1606400674 /home/munzeria/Documents/djvprojet/Space Pong/GameObject.h
@@ -450,10 +453,20 @@
 1606409042 /home/munzeria/Documents/djvprojet/Space Pong/RendererSoloPlay.h
 	"Renderer.h"
 
-1606409384 source:/home/munzeria/Documents/djvprojet/Space Pong/RendererSoloPlay.cpp
+1606733989 source:/home/munzeria/Documents/djvprojet/Space Pong/RendererSoloPlay.cpp
 	"RendererSoloPlay.h"
 	"Game.h"
 	<iostream>
 
 1539886770 /home/munzeria/Documents/SFML-2.5.1/include/SFML/Window
+
+1606729912 /home/munzeria/Documents/djvprojet/Space Pong/KeyboardControls.h
+
+1606730102 source:/home/munzeria/Documents/djvprojet/Space Pong/KeyboardControls.cpp
+	"KeyboardControls.h"
+
+1606733728 /home/munzeria/Documents/djvprojet/Space Pong/GameSettings.h
+
+1606734986 source:/home/munzeria/Documents/djvprojet/Space Pong/GameSettings.cpp
+	"GameSettings.h"
 

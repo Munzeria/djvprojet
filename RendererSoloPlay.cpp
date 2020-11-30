@@ -11,10 +11,10 @@ RendererSoloPlay::RendererSoloPlay(Game* g):
         iaRacket = g->getGameStateSoloPlay()->getIARacket();
         ball = g->getGameStateSoloPlay()->getBall();
         //  Mise en place de l'affichage - raquette du joueur
-        playerRacket->setSize(sf::Vector2f(25, 100));
+        playerRacket->setSize(sf::Vector2f(g->getSettings()->getRacketWidth(), g->getSettings()->getRacketHeight()));
         playerRacket->setFillColor(sf::Color::Red);
         //  Raquette IA
-        iaRacket->setSize(sf::Vector2f(25, 100));
+        iaRacket->setSize(sf::Vector2f(g->getSettings()->getRacketWidth(), g->getSettings()->getRacketHeight()));
         iaRacket->setFillColor(sf::Color::Blue);
         //  Balle
         ball->setRadius(10);

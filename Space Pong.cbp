@@ -31,8 +31,27 @@
 		<Compiler>
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
+			<Add option="-DSFML_STATIC" />
+			<Add directory="../../SFML-2.5.1/include" />
 		</Compiler>
+		<Linker>
+			<Add library="sfml-graphics" />
+			<Add library="sfml-window" />
+			<Add library="sfml-system" />
+			<Add directory="../../SFML-2.5.1/lib" />
+		</Linker>
+		<Unit filename="Game.cpp" />
 		<Unit filename="Game.h" />
+		<Unit filename="GameObject.cpp" />
+		<Unit filename="GameObject.h" />
+		<Unit filename="GameStateBase.cpp" />
+		<Unit filename="GameStateBase.h" />
+		<Unit filename="GameStateSoloPlay.cpp" />
+		<Unit filename="GameStateSoloPlay.h" />
+		<Unit filename="Renderer.cpp" />
+		<Unit filename="Renderer.h" />
+		<Unit filename="RendererSoloPlay.cpp" />
+		<Unit filename="RendererSoloPlay.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
