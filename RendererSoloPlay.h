@@ -22,5 +22,7 @@ private:
     sf::RectangleShape* playerRacket,
                         *iaRacket;
     sf::CircleShape*    ball;
+    sf::Text*           scoreText;
+    sf::Font            font;
 };
 #endif // _RENDERERSOLOPLAY_

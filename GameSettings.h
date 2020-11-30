@@ -14,12 +14,16 @@ public:
     int getRacketWidth();
     int getRacketHeight();
     int getRacketSpeed();
+    int getBallRadius();
+    int getBallSpeed();
 /*  ----    VARIABLES   ----    */
 private:
     //  Largeur et hauteur des raquettes
     int racketWidth,
         racketHeight,
-        racketSpeed;
+        racketSpeed,
+        ballRadius,
+        ballSpeed;
 };
 #endif // _GAMESETTINGS_
 

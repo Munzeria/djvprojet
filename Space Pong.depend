@@ -12,8 +12,9 @@
 	"Renderer.h"
 	"RendererSoloPlay.h"
 
-1606733929 source:/home/munzeria/Documents/djvprojet/Space Pong/Game.cpp
+1606747717 source:/home/munzeria/Documents/djvprojet/Space Pong/Game.cpp
 	"Game.h"
+	<iostream>
 
 1539885013 /home/munzeria/Documents/SFML-2.5.1/include/SFML/Graphics.hpp
 	<SFML/Window.hpp>
@@ -430,12 +431,14 @@
 1606412342 source:/home/munzeria/Documents/djvprojet/Space Pong/GameStateBase.cpp
 	"GameStateBase.h"
 
-1606735669 source:/home/munzeria/Documents/djvprojet/Space Pong/GameStateSoloPlay.cpp
+1606752278 source:/home/munzeria/Documents/djvprojet/Space Pong/GameStateSoloPlay.cpp
 	"Game.h"
 	"GameStateSoloPlay.h"
 	<iostream>
+	<cmath>
+	<SFML/System/Vector2.hpp>
 
-1606731726 /home/munzeria/Documents/djvprojet/Space Pong/GameStateSoloPlay.h
+1606753136 /home/munzeria/Documents/djvprojet/Space Pong/GameStateSoloPlay.h
 	"GameStateBase.h"
 
 1606400674 /home/munzeria/Documents/djvprojet/Space Pong/GameObject.h
@@ -450,10 +453,10 @@
 1606405706 source:/home/munzeria/Documents/djvprojet/Space Pong/Renderer.cpp
 	"Renderer.h"
 
-1606409042 /home/munzeria/Documents/djvprojet/Space Pong/RendererSoloPlay.h
+1606752078 /home/munzeria/Documents/djvprojet/Space Pong/RendererSoloPlay.h
 	"Renderer.h"
 
-1606733989 source:/home/munzeria/Documents/djvprojet/Space Pong/RendererSoloPlay.cpp
+1606752940 source:/home/munzeria/Documents/djvprojet/Space Pong/RendererSoloPlay.cpp
 	"RendererSoloPlay.h"
 	"Game.h"
 	<iostream>
@@ -465,8 +468,8 @@
 1606730102 source:/home/munzeria/Documents/djvprojet/Space Pong/KeyboardControls.cpp
 	"KeyboardControls.h"
 
-1606733728 /home/munzeria/Documents/djvprojet/Space Pong/GameSettings.h
+1606743267 /home/munzeria/Documents/djvprojet/Space Pong/GameSettings.h
 
-1606734986 source:/home/munzeria/Documents/djvprojet/Space Pong/GameSettings.cpp
+1606750767 source:/home/munzeria/Documents/djvprojet/Space Pong/GameSettings.cpp
 	"GameSettings.h"
 

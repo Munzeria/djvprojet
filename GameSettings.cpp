@@ -1,9 +1,11 @@
 #include "GameSettings.h"
 
 GameSettings::GameSettings():
-    racketWidth(30),
-    racketHeight(120),
-    racketSpeed(120)
+    racketWidth(20),
+    racketHeight(100),
+    racketSpeed(200),
+    ballRadius(10),
+    ballSpeed(350)
     {
 
     }
@@ -11,3 +13,5 @@ GameSettings::GameSettings():
 int GameSettings::getRacketWidth(){  return racketWidth; }
 int GameSettings::getRacketHeight(){ return racketHeight;}
 int GameSettings::getRacketSpeed(){  return racketSpeed; }
+int GameSettings::getBallRadius(){   return ballRadius;  }
+int GameSettings::getBallSpeed(){    return ballSpeed;   }
