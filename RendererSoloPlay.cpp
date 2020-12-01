@@ -1,19 +1,20 @@
 #include "RendererSoloPlay.h"
 
 #include "Game.h"
-#include <iostream>
 
 RendererSoloPlay::RendererSoloPlay(Game* g):
     Renderer(g),
     font()
     {
+        //  Lien avec le gamestate
+        linkedState = game->getGameStateSoloPlay();
         //  Ressource police
         font.loadFromFile("FreeMono.ttf");
         //  Initialisation des pointeurs
-        playerRacket = g->getGameStateSoloPlay()->getPlayerRacket();
-        iaRacket = g->getGameStateSoloPlay()->getIARacket();
-        ball = g->getGameStateSoloPlay()->getBall();
-        scoreText = g->getGameStateSoloPlay()->getScoreText();
+        playerRacket = linkedState->getPlayerRacket();
+        iaRacket = linkedState->getIARacket();
+        ball = linkedState->getBall();
+        scoreText = linkedState->getScoreText();
         //  Mise en place de l'affichage - raquette du joueur
         playerRacket->setSize(sf::Vector2f(g->getSettings()->getRacketWidth(), g->getSettings()->getRacketHeight()));
         playerRacket->setFillColor(sf::Color::Red);

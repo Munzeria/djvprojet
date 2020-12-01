@@ -12,12 +12,18 @@ public:
     /*  Methodes permettant de recuperer les touches pressees   */
     bool    getKeyUp();
     bool    getKeyDown();
+    bool    getKeyEscape();
+    bool    getKeyEnter();
     /*  Methodes permettant de definir les touches pressees */
     void    setKeyUp(bool b);
     void    setKeyDown(bool b);
+    void    setKeyEscape(bool b);
+    void    setKeyEnter(bool b);
 /*  ----    VARIABLES   ----    */
 private:
     bool    keyUP,
-            keyDOWN;
+            keyDOWN,
+            keyESCAPE,
+            keyENTER;
 };
 #endif // _KEYBOARDCONTROL_

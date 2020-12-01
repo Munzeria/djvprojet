@@ -9,10 +9,11 @@ Game::Game():
     settings(),
     keyboard(),
     gsSoloPlay(this),
-    rendrSoloPlay(this)
+    gsMainMenu(this),
+    rendrSoloPlay(this),
+    rendrMainMenu(this)
 {
-    currentGameState = &gsSoloPlay;
-    currentRenderer = &rendrSoloPlay;
+    switchGameState(MAINMENU);
 }
 
 void Game::run()
@@ -30,6 +31,29 @@ void Game::run()
         Game::display();
     }
 }
+
+void Game::switchGameState(int targetGS)
+{
+    switch(targetGS)
+    {
+    case Game::MAINMENU:
+        //  Main menu cleanup fonction ?
+        currentGameState = getGameStateMainMenu();
+        currentRenderer = &rendrMainMenu;
+        break;
+    case Game::SOLOPLAY:
+        //
+        currentGameState = getGameStateSoloPlay();
+        currentRenderer = &rendrSoloPlay;
+        break;
+    }
+}
+
+void Game::endGame()
+{
+    window.close();
+}
+
 /*  Game::events() doit recuperer les input utilisateurs    */
 void Game::events()
 {
@@ -54,6 +78,10 @@ void Game::playerInput(sf::Keyboard::Key k, bool b)
         keyboard.setKeyUp(b);
     else if (k == sf::Keyboard::Down)
         keyboard.setKeyDown(b);
+    else if (k == sf::Keyboard::Escape)
+        keyboard.setKeyEscape(b);
+    else if (k == sf::Keyboard::Enter)
+        keyboard.setKeyEnter(b);
 }
 
 /*  Game::update() gere la normalisation du temps, puis demande au current gamestate d'effectuer ses operations */
@@ -82,3 +110,4 @@ int Game::getWindowWidth(){     return window_width;    }
 /*  Methodes renvoyant les differents etats du jeu  */
 GameStateBase* Game::getCurrentGameState(){ return currentGameState;    }
 GameStateSoloPlay* Game::getGameStateSoloPlay(){    return &gsSoloPlay; }
+GameStateMainMenu* Game::getGameStateMainMenu(){    return &gsMainMenu; }

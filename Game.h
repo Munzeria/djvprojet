@@ -9,9 +9,11 @@
 
 #include "GameSettings.h"
 #include "GameStateBase.h"
+#include "GameStateMainMenu.h"
 #include "GameStateSoloPlay.h"
 #include "KeyboardControls.h"
 #include "Renderer.h"
+#include "RendererMainMenu.h"
 #include "RendererSoloPlay.h"
 
 class Game
@@ -32,19 +34,31 @@ public:
             Game();
     /*      run() sert a lancer la boucle principale du jeu */
     void    run();
+    /*      switchGameState() sert à changer d'etat du jeu  */
+    void    switchGameState(int targetGS);
+    /*      Ferme le jeu.   */
+    void    endGame();
     /*      Renvoie les parametres du jeu   */
     GameSettings*       getSettings();
     /*      Renvoie le keyboard controller  */
     KeyboardControls*   getKeyboard();
     /*      Methodes renvoyant les differents etats du jeu  */
-    GameStateBase*  getCurrentGameState();
+    GameStateBase*      getCurrentGameState();
     GameStateSoloPlay*  getGameStateSoloPlay();
+    GameStateMainMenu*  getGameStateMainMenu();
 
     /*  Methodes relatives a la taille de la fenetre    */
     int     getWindowHeight();
     int     getWindowWidth();
 
 /*  ----    VARIABLES   ----    */
+public:
+    //  Enum pour les gamestates
+    enum gs
+    {
+        SOLOPLAY = 0,
+        MAINMENU
+    };
 private:
     int window_height;
     int window_width;
@@ -57,9 +71,11 @@ private:
     GameStateBase*      currentGameState;
 
     GameStateSoloPlay   gsSoloPlay;
+    GameStateMainMenu   gsMainMenu;
     //  RENDERERS
     Renderer*           currentRenderer;
 
     RendererSoloPlay    rendrSoloPlay;
+    RendererMainMenu    rendrMainMenu;
 };
 #endif // _GAME_

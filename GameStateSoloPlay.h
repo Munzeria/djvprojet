@@ -41,6 +41,5 @@ private:
     int                 playerScore,
                         iaScore;
     sf::Text            scoreText;
-    Game                *game;
 };
 #endif // _GAMESTATESOLOPLAY_

@@ -42,14 +42,20 @@
 		</Linker>
 		<Unit filename="Game.cpp" />
 		<Unit filename="Game.h" />
-		<Unit filename="GameObject.cpp" />
-		<Unit filename="GameObject.h" />
+		<Unit filename="GameSettings.cpp" />
+		<Unit filename="GameSettings.h" />
 		<Unit filename="GameStateBase.cpp" />
 		<Unit filename="GameStateBase.h" />
+		<Unit filename="GameStateMainMenu.cpp" />
+		<Unit filename="GameStateMainMenu.h" />
 		<Unit filename="GameStateSoloPlay.cpp" />
 		<Unit filename="GameStateSoloPlay.h" />
+		<Unit filename="KeyboardControls.cpp" />
+		<Unit filename="KeyboardControls.h" />
 		<Unit filename="Renderer.cpp" />
 		<Unit filename="Renderer.h" />
+		<Unit filename="RendererMainMenu.cpp" />
+		<Unit filename="RendererMainMenu.h" />
 		<Unit filename="RendererSoloPlay.cpp" />
 		<Unit filename="RendererSoloPlay.h" />
 		<Unit filename="main.cpp" />

@@ -36,6 +36,12 @@ GameStateSoloPlay::GameStateSoloPlay(Game *gameArg):
 /*  execute(): operations liees a cet etat du jeu   */
 void GameStateSoloPlay::execute(sf::Time delta)
 {
+    //  Si l'utilisateur appuie sur escape, quitte la partie
+    if (getGame()->getKeyboard()->getKeyEscape())
+    {
+        getGame()->switchGameState(Game::MAINMENU);
+        return;
+    }
     //  Verification d'un "goal"
     if (ball.getPosition().x < 0)  //IA marque
     {
