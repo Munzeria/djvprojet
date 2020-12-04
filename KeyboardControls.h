@@ -7,6 +7,12 @@ class KeyboardControls
 public:
     /*  Constructeur    */
             KeyboardControls();
+    /*  Constructeur copie. Classe sans pointeurs, default suffit   */
+            KeyboardControls(const KeyboardControls &kbc) = default;
+    /*  Destructeur, default suffit */
+            ~KeyboardControls() = default;
+    /*  Operateur d'affectation, default suffit */
+    KeyboardControls& operator=(const KeyboardControls &kbc) = default;
     /*  Methode pour reset les touches pressees */
     void    reset();
     /*  Methodes permettant de recuperer les touches pressees   */

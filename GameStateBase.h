@@ -12,6 +12,12 @@ class GameStateBase
 public:
     /*  Constructeur    */
     GameStateBase(Game* g);
+    /*  Constructeur de copie - Incopiable, car game est incopiable   */
+    GameStateBase(const GameStateBase &gsb) = delete;
+    /*  DESTRUCTEUR */
+    virtual ~GameStateBase();
+    /*  Operateur d'affection, inutilisable */
+    GameStateBase& operator=(const GameStateBase &gs) = delete;
     /*  execute() realise les operations liees a un etat du jeu precis.
     **  il est ici virtuel pur car GameStateBase est une classe abstraite non destinee a etre instanciee    */
     virtual void execute(sf::Time delta) = 0;

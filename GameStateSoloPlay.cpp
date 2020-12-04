@@ -21,16 +21,11 @@ GameStateSoloPlay::GameStateSoloPlay(Game *gameArg):
     ball.setOrigin(getGame()->getSettings()->getBallRadius(), getGame()->getSettings()->getBallRadius());
 
     resetBall();
-    /*//  Placement des objets (base sur leur origine)
-    playerRacket.setPosition(5 + getGame()->getSettings()->getRacketWidth()/2,
-                             getGame()->getWindowHeight()/2);
-    iaRacket.setPosition(getGame()->getWindowWidth() - getGame()->getSettings()->getRacketWidth()/2 - 5,
-                         getGame()->getWindowHeight()/2);
+}
 
-    ball.setPosition(getGame()->getWindowWidth()/2, getGame()->getWindowHeight()/2);
-
-    //  Texte de score
-    scoreText.setString(std::to_string(playerScore) + " < > " + std::to_string(iaScore));*/
+GameStateSoloPlay::~GameStateSoloPlay()
+{
+    //  ~GameStateBase() sera appele, pas d'autre pointeur a delete
 }
 
 /*  execute(): operations liees a cet etat du jeu   */

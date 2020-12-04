@@ -32,6 +32,15 @@ RendererSoloPlay::RendererSoloPlay(Game* g):
         scoreText->setFillColor(sf::Color::White);
     }
 
+RendererSoloPlay::~RendererSoloPlay()
+{
+    delete linkedState;
+    delete playerRacket;
+    delete iaRacket;
+    delete ball;
+    delete scoreText;
+}
+
 void RendererSoloPlay::render(sf::RenderWindow* window)
 {
     window->draw(*ball);

@@ -32,13 +32,13 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 			<Add option="-DSFML_STATIC" />
-			<Add directory="../../SFML-2.5.1/include" />
+			<Add directory="../../sfml/include/SFML" />
 		</Compiler>
 		<Linker>
 			<Add library="sfml-graphics" />
 			<Add library="sfml-window" />
 			<Add library="sfml-system" />
-			<Add directory="../../SFML-2.5.1/lib" />
+			<Add directory="sfml/lib" />
 		</Linker>
 		<Unit filename="Game.cpp" />
 		<Unit filename="Game.h" />

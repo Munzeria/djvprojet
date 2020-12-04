@@ -14,6 +14,11 @@ GameStateMainMenu::GameStateMainMenu(Game* g):
         delay = sf::seconds(0.25f);
     }
 
+GameStateMainMenu::~GameStateMainMenu()
+{
+    //  Le destructeur de GameStateBase sera appele par defaut, aucun autre pointeur a delete
+}
+
 void GameStateMainMenu::execute(sf::Time delta)
 {
     //  Si assez de temps a passe depuis le dernier check des inputs

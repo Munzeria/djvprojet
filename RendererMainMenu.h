@@ -12,6 +12,12 @@ class RendererMainMenu: public Renderer
 public:
     /*  Constructeur    */
     RendererMainMenu(Game* g);
+    /*  Constructeur copie, indisponible    */
+    RendererMainMenu(const RendererMainMenu &rmm) = delete;
+    /*  Destructeur */
+    virtual ~RendererMainMenu();
+    /*  Operateur affectation, indisponible */
+    RendererMainMenu& operator=(const RendererMainMenu &rmm) = delete;
     /*  override de render()    */
     void render(sf::RenderWindow* window) override;
 /*  ----    VARIABLES   ----    */

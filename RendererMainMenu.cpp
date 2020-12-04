@@ -43,6 +43,11 @@ RendererMainMenu::RendererMainMenu(Game* g):
                                game->getWindowHeight() - sprQuitter.getGlobalBounds().height);
     }
 
+RendererMainMenu::~RendererMainMenu()
+{
+    delete linkedState;
+}
+
 void RendererMainMenu::render(sf::RenderWindow* window)
 {
     window->draw(mainMenuBackSprite);

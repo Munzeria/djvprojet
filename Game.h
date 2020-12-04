@@ -32,6 +32,15 @@ private:
 public:
     /*      Constructeur    */
             Game();
+    /*      Constructeur de copie
+    **      Game utilise une référence à RenderWindow, qui est declaree incopiable dans SFML.
+    **      La copie d'un objet game doit donc etre impossible. */
+            Game(const Game &game) = delete;
+    /*      Destructeur */
+            ~Game();
+    /*      Copie
+    **      Operateur rendu impossible a appeler pour les memes raisons que le constructeur de copie.   */
+    Game    &operator = (const Game &game) = delete;
     /*      run() sert a lancer la boucle principale du jeu */
     void    run();
     /*      switchGameState() sert à changer d'etat du jeu  */

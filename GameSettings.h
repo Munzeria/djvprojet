@@ -10,6 +10,12 @@ class GameSettings
 public:
     /*  Constructeur    */
     GameSettings();
+    /*  Constructeur de copie   */
+    GameSettings(const GameSettings &gs);
+    /*  Destructeur - aucun pointeur dans cette classe, le destructeur par défaut suffit    */
+    ~GameSettings() = default;
+    /*  Operateur d'affectation */
+    GameSettings& operator=(const GameSettings &gs);
     /*  Getters */
     int getRacketWidth();
     int getRacketHeight();

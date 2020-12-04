@@ -11,6 +11,12 @@ class GameStateSoloPlay: public GameStateBase
 public:
     /*  Constructeur    */
     GameStateSoloPlay(Game* gameArg);
+    /*  Constructeur copie, indisponible    */
+    GameStateSoloPlay(const GameStateSoloPlay &gssp) = delete;
+    /*  Destructeur */
+    virtual ~GameStateSoloPlay();
+    /*  Operateur d'affectation, indisponible   */
+    GameStateSoloPlay& operator=(const GameStateSoloPlay &gssp) = delete;
     /*  methode override; voir GameStateBase.h */
     void execute(sf::Time delta) override;
     /*  Methodes permettant de recuperer les elements a afficher    */

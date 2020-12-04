@@ -11,6 +11,12 @@ class Renderer
 public:
     /*  Constructeur    */
     Renderer(Game *g);
+    /*  Constructeur copie, indisponible    */
+    Renderer(const Renderer &r) = delete;
+    /*  Destructeur */
+    virtual ~Renderer();
+    /*  Operateur affectation, indisponible */
+    Renderer& operator=(const Renderer &r) = delete;
     /*  render() se charge d'afficher les elements specifiques a un gamestate.
     **  virtual pure, car Renderer doit etre abstrait.  */
     virtual void render(sf::RenderWindow* window) = 0;

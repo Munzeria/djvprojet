@@ -13,6 +13,12 @@ class RendererSoloPlay: public Renderer
 public:
     /*  Constructeur    */
     RendererSoloPlay(Game* g);
+    /*  Constructeur copie, desactive   */
+    RendererSoloPlay(const RendererSoloPlay &rsp) = delete;
+    /*  Destructeur */
+    virtual ~RendererSoloPlay();
+    /*  Operateur affectation, desactive    */
+    RendererSoloPlay& operator=(const RendererSoloPlay &rsp) = delete;
     /*  override de render()    */
     void render(sf::RenderWindow* window) override;
 /*  ----    VARIABLES   ----    */

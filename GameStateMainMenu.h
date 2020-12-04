@@ -9,6 +9,12 @@ class GameStateMainMenu: public GameStateBase
 public:
     /*  Constructeur    */
     GameStateMainMenu(Game* g);
+    /*  Operateur de copie, indisponible    */
+    GameStateMainMenu(const GameStateMainMenu &gsmm) = delete;
+    /*  Destructeur */
+    virtual ~GameStateMainMenu();
+    /*  Operateur d'affectation, indisponible   */
+    GameStateMainMenu& operator=(const GameStateMainMenu &gsmm) = delete;
     /*  Methode override; voir GameStateBase.h  */
     void execute(sf::Time delta) override;
     /*  Recuperer le choix actuel   */

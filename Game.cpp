@@ -16,6 +16,13 @@ Game::Game():
     switchGameState(MAINMENU);
 }
 
+/*  DESTRUCTEUR */
+Game::~Game()
+{
+    delete currentGameState;
+    delete currentRenderer;
+}
+
 void Game::run()
 {
     //  utiliser sf::clock pour gerer le temps
