@@ -13,7 +13,10 @@ GameStateSoloPlay::GameStateSoloPlay(Game *gameArg):
     ballDirection(0, 0),
     playerScore(0),
     iaScore(0),
-    scoreText()
+    scoreText(),
+    gamePaused(false),
+    gameEnded(false),
+    lastCheck()
 {
     //  Definition des origines
     playerRacket.setOrigin(getGame()->getSettings()->getRacketWidth()/2, getGame()->getSettings()->getRacketHeight()/2);
@@ -37,20 +40,43 @@ void GameStateSoloPlay::execute(sf::Time delta)
         getGame()->switchGameState(Game::MAINMENU);
         return;
     }
-    //  Verification d'un "goal"
-    if (ball.getPosition().x < 0)  //IA marque
+    //  Espace permet de mettre en pause ou reprendre, sauf si partie terminee
+    lastCheck += delta;
+    if (lastCheck >= sf::seconds(0.5f) && !gameEnded && getGame()->getKeyboard()->getKeySpace())
     {
-        iaScore++;
+        gamePaused = !gamePaused;
+        lastCheck = sf::seconds(0.f);
+    }
+    //  Si partie terminée, espace permet de rejouer
+    if (gameEnded && getGame()->getKeyboard()->getKeySpace())
+    {
+        gameEnded = false;
+        iaScore = 0;
+        playerScore = 0;
         resetBall();
     }
-    if (ball.getPosition().x > getGame()->getWindowWidth()) //le joueur marque
+    if (!gameEnded || !gamePaused)
     {
-        playerScore++;
-        resetBall();
+        if (playerScore >= 7 || iaScore >= 7)
+        {
+            gameEnded = true;
+            return;
+        }
+        //  Verification d'un "goal"
+        if (ball.getPosition().x < 0)  //IA marque
+        {
+            iaScore++;
+            resetBall();
+        }
+        if (ball.getPosition().x > getGame()->getWindowWidth()) //le joueur marque
+        {
+            playerScore++;
+            resetBall();
+        }
+        playerMovement(delta);
+        iaMovement(delta);
+        ballMovement(delta);
     }
-    playerMovement(delta);
-    iaMovement(delta);
-    ballMovement(delta);
 }
 
 /*  playerMovement() gere le mouvement du joueur. Normalise par le delta de execute()   */
@@ -171,3 +197,6 @@ sf::RectangleShape* GameStateSoloPlay::getPlayerRacket(){    return &playerRacke
 sf::RectangleShape* GameStateSoloPlay::getIARacket(){    return &iaRacket;    }
 sf::CircleShape* GameStateSoloPlay::getBall(){   return &ball;    }
 sf::Text* GameStateSoloPlay::getScoreText(){    return &scoreText;  }
+bool GameStateSoloPlay::getGamePaused(){    return gamePaused;  }
+bool GameStateSoloPlay::getGameEnded(){ return gameEnded;   }
+int GameStateSoloPlay::getScoreDiff(){  return playerScore - iaScore;   }

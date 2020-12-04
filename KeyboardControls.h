@@ -20,16 +20,19 @@ public:
     bool    getKeyDown();
     bool    getKeyEscape();
     bool    getKeyEnter();
+    bool    getKeySpace();
     /*  Methodes permettant de definir les touches pressees */
     void    setKeyUp(bool b);
     void    setKeyDown(bool b);
     void    setKeyEscape(bool b);
     void    setKeyEnter(bool b);
+    void    setKeySpace(bool b);
 /*  ----    VARIABLES   ----    */
 private:
     bool    keyUP,
             keyDOWN,
             keyESCAPE,
-            keyENTER;
+            keyENTER,
+            keySPACE;
 };
 #endif // _KEYBOARDCONTROL_

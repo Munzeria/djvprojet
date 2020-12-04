@@ -89,6 +89,8 @@ void Game::playerInput(sf::Keyboard::Key k, bool b)
         keyboard.setKeyEscape(b);
     else if (k == sf::Keyboard::Enter)
         keyboard.setKeyEnter(b);
+    else if (k == sf::Keyboard::Space)
+        keyboard.setKeySpace(b);
 }
 
 /*  Game::update() gere la normalisation du temps, puis demande au current gamestate d'effectuer ses operations */

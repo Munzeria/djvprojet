@@ -24,6 +24,10 @@ public:
     sf::RectangleShape* getIARacket();
     sf::CircleShape*    getBall();
     sf::Text*           getScoreText();
+    bool                getGamePaused();
+    bool                getGameEnded();
+    //  getScoreDiff renvoie la difference de score entre joueur et ia. Positif, joueur gagne, negatif, ia gagne
+    int                 getScoreDiff();
 private:
     /*  Methode gerant le mouvement du joueur   */
     void    playerMovement(sf::Time delta);
@@ -47,5 +51,8 @@ private:
     int                 playerScore,
                         iaScore;
     sf::Text            scoreText;
+    bool                gamePaused,
+                        gameEnded;
+    sf::Time            lastCheck;
 };
 #endif // _GAMESTATESOLOPLAY_

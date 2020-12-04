@@ -30,5 +30,11 @@ private:
     sf::CircleShape*    ball;
     sf::Text*           scoreText;
     sf::Font            font;
+    //  image GAGNE
+    sf::Texture         texGagne;
+    sf::Sprite          sprGagne;
+    //  Image PERDU
+    sf::Texture         texPerdu;
+    sf::Sprite          sprPerdu;
 };
 #endif // _RENDERERSOLOPLAY_
