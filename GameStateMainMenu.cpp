@@ -21,7 +21,7 @@ GameStateMainMenu::~GameStateMainMenu()
 
 void GameStateMainMenu::execute(sf::Time delta)
 {
-    //  Si assez de temps a passe depuis le dernier check des inputs
+    //  Si assez de temps a passe depuis le dernier check des inputs, verifier les inputs
     lastButtonCheck += delta;
     if (lastButtonCheck >= delay)
     {

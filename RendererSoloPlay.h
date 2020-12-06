@@ -1,3 +1,8 @@
+/*  Developpement de jeux vidéos - Projet
+**  Space Pong
+**  ----------
+**  Classe heritant de Renderer
+**  Cette classe gere l'affichage du jeu en solo */
 #ifndef _RENDERERSOLOPLAY_
 #define _RENDERERSOLOPLAY_
 

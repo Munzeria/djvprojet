@@ -1,3 +1,8 @@
+/*  Developpement de jeux vidéos - Projet
+**  Space Pong
+**  ----------
+**  Classe heritant de Renderer
+**  cette classe gere l'affichage du menu principal */
 #ifndef _RENDERERMAINMENU_
 #define _RENDERERMAINMENU_
 

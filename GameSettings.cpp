@@ -30,6 +30,7 @@ GameSettings& GameSettings::operator=(const GameSettings &gs)
     ballSpeed = gs.ballSpeed;
 }
 
+//  Getters des differentes donnees
 int GameSettings::getRacketWidth(){  return racketWidth; }
 int GameSettings::getRacketHeight(){ return racketHeight;}
 int GameSettings::getRacketSpeed(){  return racketSpeed; }

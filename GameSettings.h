@@ -1,3 +1,8 @@
+/*  Developpement de jeux vidéos - Projet
+**  Space Pong
+**  ----------
+**  Classe de parametres centralisant differents elements parametrables du jeu via code
+**  tels que vitesse, taille, des raquettes et de la balle */
 #ifndef _GAMESETTINGS_
 #define _GAMESETTINGS_
 

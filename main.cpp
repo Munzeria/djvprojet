@@ -4,6 +4,6 @@
 
 int main()
 {
-    Game game;
-    game.run();
+    Game game;      // Cree le jeu
+    game.run();     //  Lance le jeu
 }

@@ -120,14 +120,6 @@ void GameStateSoloPlay::ballMovement(sf::Time delta)
     */
     if (ballDirection.x == 0 && ballDirection.y == 0)
     {
-        /*srand(time(NULL));  //random seed
-        ballDirection.x = rand() / (RAND_MAX + 2.) - 1.;
-        ballDirection.y = rand() / (RAND_MAX + 2.) - 1.;
-        //  Normalisation du vecteur de deplacement
-        float magnitude{sqrt(pow(ballDirection.x, 2) + pow(ballDirection.y, 2))};
-        ballDirection.x = ballDirection.x / magnitude;
-        ballDirection.y = ballDirection.y / magnitude;   */
-
         /*  Autre methode a tester (TEST OK, methode preferee)
         **  definir un vecteur (1, 0) normalisé (longueur 1)
         **  définir une rotation (+/- 45°

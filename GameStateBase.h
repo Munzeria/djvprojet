@@ -1,3 +1,8 @@
+/*  Developpement de jeux vidéos - Projet
+**  Space Pong
+**  ----------
+**  Classe ABSTRAITE representant un etat du jeu
+**  les etats definissent le comportement du jeu selon le DP Strategy */
 #ifndef _GAMESTATEBASE_
 #define _GAMESTATEBASE_
 

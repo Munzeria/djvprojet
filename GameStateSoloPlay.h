@@ -1,3 +1,7 @@
+/*  Developpement de jeux vidéos - Projet
+**  Space Pong
+**  ----------
+**  Classe heritant de GameStateBase, representant le comportement du jeu lors d'une partie solo */
 #ifndef _GAMESTATESOLOPLAY_
 #define _GAMESTATESOLOPLAY_
 

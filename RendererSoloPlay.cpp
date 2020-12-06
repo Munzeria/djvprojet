@@ -62,10 +62,14 @@ RendererSoloPlay::~RendererSoloPlay()
 
 void RendererSoloPlay::render(sf::RenderWindow* window)
 {
-    window->draw(*ball);
+    //  Si partie terminee, pas d'affichage de la balle
+    if (!linkedState->getGameEnded())
+        window->draw(*ball);
+
     window->draw(*playerRacket);
     window->draw(*iaRacket);
     window->draw(*scoreText);
+
     if (linkedState->getGameEnded())
     {
         //  Si joueur a gagne

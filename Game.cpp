@@ -1,5 +1,4 @@
 #include "Game.h"
-#include <iostream>
 
 /*  CONSTRUCTEUR    */
 Game::Game():
@@ -22,6 +21,7 @@ Game::~Game()
 
 }
 
+//  Lance la boucle principale du jeu
 void Game::run()
 {
     //  utiliser sf::clock pour gerer le temps
@@ -32,9 +32,9 @@ void Game::run()
         //  elapsed() est un sf::time representant le temps passe depuis la derniere iteration, recupere gracec a clock.restart()
         sf::Time elapsed = clock.restart();
 
-        Game::events();
-        Game::update(elapsed);
-        Game::display();
+        Game::events();         //  Gestion des evenements clavier
+        Game::update(elapsed);  //  mise a jour du modele via le GameState adequat
+        Game::display();        //  mise a jour de l'affichage via le Renderer adequat
     }
 }
 
@@ -52,9 +52,11 @@ void Game::switchGameState(int targetGS)
         currentGameState = getGameStateSoloPlay();
         currentRenderer = &rendrSoloPlay;
         break;
+    //  Pas de DEFAULT: si int invalide fourni, aucun changement desire
     }
 }
 
+//  Termine le jeu en fermant la fenetre
 void Game::endGame()
 {
     window.close();
@@ -78,6 +80,7 @@ void Game::events()
     }
 }
 
+/*  Met a jour la classe Keyboard   */
 void Game::playerInput(sf::Keyboard::Key k, bool b)
 {
     if(k == sf::Keyboard::Up)
@@ -115,7 +118,7 @@ KeyboardControls* Game::getKeyboard(){  return &keyboard;   }
 int Game::getWindowHeight(){    return window_height;   }
 int Game::getWindowWidth(){     return window_width;    }
 
-/*  Methodes renvoyant les differents etats du jeu  */
+/*  Methodes renvoyant les differents etats du jeu, via reference  */
 GameStateBase* Game::getCurrentGameState(){ return currentGameState;    }
 GameStateSoloPlay* Game::getGameStateSoloPlay(){    return &gsSoloPlay; }
 GameStateMainMenu* Game::getGameStateMainMenu(){    return &gsMainMenu; }

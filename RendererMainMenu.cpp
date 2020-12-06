@@ -50,8 +50,10 @@ RendererMainMenu::~RendererMainMenu()
 
 void RendererMainMenu::render(sf::RenderWindow* window)
 {
+    //  Dessin du fond d'ecran
     window->draw(mainMenuBackSprite);
 
+    //  Affichage du choix
     switch(linkedState->getCurrentChoice())
     {
     case 0:

@@ -1,3 +1,8 @@
+/*  Developpement de jeux vidéos - Projet
+**  Space Pong
+**  ----------
+**  Classe centralisant l'etat des touches du clavier
+**  Seules les touches utilisees dans le jeu sont ici presentes */
 #ifndef _KEYBOARDCONTROL_
 #define _KEYBOARDCONTROL_
 

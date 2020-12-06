@@ -1,3 +1,9 @@
+/*  Developpement de jeux vidéos - Projet
+**  Space Pong
+**  ----------
+**  Classe ABSTRAITE
+**  Les classes Renderer auront pour tache de gerer l'affichage du jeu
+**  Les classes Renderer seront specialisees pour un etat particulier   */
 #ifndef _RENDERER_
 #define _RENDERER_
 

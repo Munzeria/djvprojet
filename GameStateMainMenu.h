@@ -1,3 +1,8 @@
+/*  Developpement de jeux vidéos - Projet
+**  Space Pong
+**  ----------
+**  Classe heritant de GameStateBase.
+**  Gere le comportement du jeu dans le menu principal  */
 #ifndef _GAMESTATEMAINMENU_
 #define _GAMESTATEMAINMENU_
 
