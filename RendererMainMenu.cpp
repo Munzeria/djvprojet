@@ -45,7 +45,7 @@ RendererMainMenu::RendererMainMenu(Game* g):
 
 RendererMainMenu::~RendererMainMenu()
 {
-    delete linkedState;
+
 }
 
 void RendererMainMenu::render(sf::RenderWindow* window)

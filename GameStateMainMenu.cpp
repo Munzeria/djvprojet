@@ -16,7 +16,7 @@ GameStateMainMenu::GameStateMainMenu(Game* g):
 
 GameStateMainMenu::~GameStateMainMenu()
 {
-    //  Le destructeur de GameStateBase sera appele par defaut, aucun autre pointeur a delete
+
 }
 
 void GameStateMainMenu::execute(sf::Time delta)

@@ -10,7 +10,7 @@ GameStateBase::GameStateBase(Game* g):
 
 GameStateBase::~GameStateBase()
 {
-    delete game;
+
 }
 
 Game* GameStateBase::getGame(){ return game; }

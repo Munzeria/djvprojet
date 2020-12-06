@@ -9,5 +9,5 @@ Renderer::Renderer(Game* g):
 
 Renderer::~Renderer()
 {
-    delete game;
+
 }

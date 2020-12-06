@@ -57,11 +57,7 @@ RendererSoloPlay::RendererSoloPlay(Game* g):
 
 RendererSoloPlay::~RendererSoloPlay()
 {
-    delete linkedState;
-    delete playerRacket;
-    delete iaRacket;
-    delete ball;
-    delete scoreText;
+
 }
 
 void RendererSoloPlay::render(sf::RenderWindow* window)

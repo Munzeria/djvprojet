@@ -19,8 +19,7 @@ Game::Game():
 /*  DESTRUCTEUR */
 Game::~Game()
 {
-    delete currentGameState;
-    delete currentRenderer;
+
 }
 
 void Game::run()

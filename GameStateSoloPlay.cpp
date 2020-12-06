@@ -28,7 +28,7 @@ GameStateSoloPlay::GameStateSoloPlay(Game *gameArg):
 
 GameStateSoloPlay::~GameStateSoloPlay()
 {
-    //  ~GameStateBase() sera appele, pas d'autre pointeur a delete
+
 }
 
 /*  execute(): operations liees a cet etat du jeu   */
