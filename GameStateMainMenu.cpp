@@ -41,6 +41,7 @@ void GameStateMainMenu::execute(sf::Time delta)
             {
             case 0:
                 //  JOUER
+                getGame()->getGameStateSoloPlay()->resetGame();
                 getGame()->switchGameState(Game::SOLOPLAY);
                 return;
             case 1:

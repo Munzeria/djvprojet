@@ -50,10 +50,7 @@ void GameStateSoloPlay::execute(sf::Time delta)
     //  Si partie terminée, espace permet de rejouer
     if (gameEnded && getGame()->getKeyboard()->getKeySpace())
     {
-        gameEnded = false;
-        iaScore = 0;
-        playerScore = 0;
-        resetBall();
+        resetGame();
     }
     if (!gameEnded || !gamePaused)
     {
@@ -67,16 +64,26 @@ void GameStateSoloPlay::execute(sf::Time delta)
         {
             iaScore++;
             resetBall();
+            updateScore();
         }
         if (ball.getPosition().x > getGame()->getWindowWidth()) //le joueur marque
         {
             playerScore++;
             resetBall();
+            updateScore();
         }
         playerMovement(delta);
         iaMovement(delta);
         ballMovement(delta);
     }
+}
+
+void GameStateSoloPlay::resetGame()
+{
+    gameEnded = false;
+    gamePaused = false;
+    resetScore();
+    resetBall();
 }
 
 /*  playerMovement() gere le mouvement du joueur. Normalise par le delta de execute()   */
@@ -119,11 +126,9 @@ void GameStateSoloPlay::ballMovement(sf::Time delta)
         //  Normalisation du vecteur de deplacement
         float magnitude{sqrt(pow(ballDirection.x, 2) + pow(ballDirection.y, 2))};
         ballDirection.x = ballDirection.x / magnitude;
-        ballDirection.y = ballDirection.y / magnitude;
-        /*  Operation impossible a faire directement, pour une raison inconnue le compilateur n'accepte pas
-        **  l'operateur / entre un vecteur et un float, bien que l'operateur soit surcharge dans Vector2.hpp    */
+        ballDirection.y = ballDirection.y / magnitude;   */
 
-        /*  Autre methode a tester
+        /*  Autre methode a tester (TEST OK, methode preferee)
         **  definir un vecteur (1, 0) normalisé (longueur 1)
         **  définir une rotation (+/- 45°
         **  tourner ce vecteur selon cette rotation */
@@ -131,7 +136,8 @@ void GameStateSoloPlay::ballMovement(sf::Time delta)
         ballDirection.y = 0.f;
 
         /*  angle en degrés. on veut une rotation de magnitude 45 degrés, vers le joueur ou vers l'ia.
-        **  il faut donc un angle dans l'intervale [0, 45] U [135, 225] U [315, 360[
+        **  il faut donc un angle dans l'intervale ]0, 45] U [135, 180[ U ]180, 225] U [315, 360[
+        **  il est preferable d'eviter une ligne droite
         **  On va prendre un random de 0 à 360 (exclu) et le relancer tant qu'il ne respecte pas  cette intervalle  */
         srand(time(NULL));  // random seed
         int angleDegres;
@@ -140,7 +146,8 @@ void GameStateSoloPlay::ballMovement(sf::Time delta)
             angleDegres = rand() % 360;
         }
         while ((angleDegres > 45 && angleDegres < 135)
-               || (angleDegres > 225 && angleDegres < 315));
+               || (angleDegres > 225 && angleDegres < 315)
+               || angleDegres == 180);
 
         float angleRadian = angleDegres * M_PI / 180;   // conversion en radian
 
@@ -216,9 +223,19 @@ void GameStateSoloPlay::resetBall()
                          getGame()->getWindowHeight()/2);
 
     ball.setPosition(getGame()->getWindowWidth()/2, getGame()->getWindowHeight()/2);
+}
 
+void GameStateSoloPlay::updateScore()
+{
     //  Texte de score
     scoreText.setString(std::to_string(playerScore) + " < > " + std::to_string(iaScore));
+}
+
+void GameStateSoloPlay::resetScore()
+{
+    iaScore = 0;
+    playerScore = 0;
+    updateScore();
 }
 
 /*  Getters */

@@ -19,6 +19,8 @@ public:
     GameStateSoloPlay& operator=(const GameStateSoloPlay &gssp) = delete;
     /*  methode override; voir GameStateBase.h */
     void execute(sf::Time delta) override;
+    /*  reset le GameState en etat d'origine, sans score    */
+    void resetGame();
     /*  Methodes permettant de recuperer les elements a afficher    */
     sf::RectangleShape* getPlayerRacket();
     sf::RectangleShape* getIARacket();
@@ -40,6 +42,10 @@ private:
     bool    ballCollision(sf::RectangleShape racket);
     /*  Reinitialise la balle au centre et les raquettes */
     void    resetBall();
+    /*  Met a jour le score */
+    void    updateScore();
+    /*  Reinitialise le score   */
+    void    resetScore();
 /*  ----    VARIABLES   ----    */
 private:
     /*  Elements du jeu:
