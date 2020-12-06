@@ -113,7 +113,7 @@ void GameStateSoloPlay::ballMovement(sf::Time delta)
     */
     if (ballDirection.x == 0 && ballDirection.y == 0)
     {
-        srand(time(NULL));  //random seed
+        /*srand(time(NULL));  //random seed
         ballDirection.x = rand() / (RAND_MAX + 2.) - 1.;
         ballDirection.y = rand() / (RAND_MAX + 2.) - 1.;
         //  Normalisation du vecteur de deplacement
@@ -122,6 +122,35 @@ void GameStateSoloPlay::ballMovement(sf::Time delta)
         ballDirection.y = ballDirection.y / magnitude;
         /*  Operation impossible a faire directement, pour une raison inconnue le compilateur n'accepte pas
         **  l'operateur / entre un vecteur et un float, bien que l'operateur soit surcharge dans Vector2.hpp    */
+
+        /*  Autre methode a tester
+        **  definir un vecteur (1, 0) normalisé (longueur 1)
+        **  définir une rotation (+/- 45°
+        **  tourner ce vecteur selon cette rotation */
+        ballDirection.x = 1.f;
+        ballDirection.y = 0.f;
+
+        /*  angle en degrés. on veut une rotation de magnitude 45 degrés, vers le joueur ou vers l'ia.
+        **  il faut donc un angle dans l'intervale [0, 45] U [135, 225] U [315, 360[
+        **  On va prendre un random de 0 à 360 (exclu) et le relancer tant qu'il ne respecte pas  cette intervalle  */
+        srand(time(NULL));  // random seed
+        int angleDegres;
+        do
+        {
+            angleDegres = rand() % 360;
+        }
+        while ((angleDegres > 45 && angleDegres < 135)
+               || (angleDegres > 225 && angleDegres < 315));
+
+        float angleRadian = angleDegres * M_PI / 180;   // conversion en radian
+
+        //  Rotation du vecteur
+        float x2, y2;
+        x2 = cos(angleRadian) * ballDirection.x - sin(angleRadian) * ballDirection.y;
+        y2 = sin(angleRadian) * ballDirection.x + cos(angleRadian) * ballDirection.y;
+
+        ballDirection.x = x2;
+        ballDirection.y = y2;
     }
 
     /*  Collisions avec bord de la fenetre  */
